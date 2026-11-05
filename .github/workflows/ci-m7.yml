@@ -1,0 +1,13 @@
+name: Probar build del M7
+
+on:
+  push:
+    branches: [devops/ci-m7]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Construir imagen
+        run: docker build -f backend/Dockerfile -t m7-grupo11 .
